@@ -1,22 +1,6 @@
 
-/*!
- *      @namespace __
- *      @element   ajax
- *      @homepage  underlinejs.github.io
- *
- *      @status    beta
- *      @version   0.0.1
- *      @author    Jo Santana
- *      @license   Released under the MIT license
- *
- *      @usage:
- *
- *      __.ajax.get('/endpoint').success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
- *      __.ajax.post('/endpoint', data).success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
- *      __.ajax.put('/endpoint', data).success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
- *      __.ajax.delete('/endpoint').success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
- *
-*/
+//  Namespace: __
+//  Element:   ajax
 
 (function()
 {
@@ -26,9 +10,9 @@
     // Get already define BAT object (if available) or create a new object
 
     var root = this,
-    __ = root.__ || _.extend({}, _);
+        module = {};
 
-    __.ajax = (function ()
+    module.ajax = (function ()
     {
         var exports = {};
 
@@ -44,7 +28,7 @@
             return [result, req];
         };
 
-        var xhr = function (type, url, data, callback) {
+        var xhr = function (type, options) {
 
             var methods = {
                 success: function () {},
@@ -59,10 +43,20 @@
 
             var request = new XHR('MSXML2.XMLHTTP.3.0');
 
+            // It options is a string, we assume it is the url
+
+            if (typeof options === 'string') {
+
+                var url = options;
+                options = {};
+                options.url = url;
+
+            }
+
             // Remove hash and add protocol if not provided (prefilters might expect it)
             // We also use the url parameter if available
 
-            url = ((url || location.href) + '').replace(/#.*$/, '').replace(/^\/\//, location.protocol + '//');
+            options.url = ((options.url || location.href) + '').replace(/#.*$/, '').replace(/^\/\//, location.protocol + '//');
 
             // Open connection
 
@@ -74,7 +68,19 @@
                 request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8');
             }
 
+            // If we got headers, set them
+
+            if (options.headers && options.headers.length) {
+
+                for (var key in options.headers) {
+                    request.setRequestHeader(key, options.headers[key]);
+                }
+            }
+
+            // Set status response
+
             request.onreadystatechange = function () {
+
                 if (request.readyState === 4) {
                     if (request.status >= 200 && request.status < 400) {
                         methods.success.apply(methods, parse(request));
@@ -84,7 +90,9 @@
                 }
             };
 
-            return {
+            request.send(options.data);
+
+            var callbacks = {
                 success: function (callback) {
                     methods.success = callback;
                     return methods;
@@ -94,26 +102,32 @@
                     return methods;
                 }
             };
+
+            return callbacks;
         };
 
-        exports.get = function (url, callback) {
-            return xhr('GET', url, null, callback);
+        exports.get = function (options) {
+            return xhr('GET', options);
         };
 
-        exports.put = function (url, data) {
-            return xhr('PUT', url, data);
+        exports.put = function (options) {
+            return xhr('PUT', options);
         };
 
-        exports.post = function (url, data) {
-            return xhr('POST', url, data);
+        exports.post = function (options) {
+            return xhr('POST', options);
         };
 
-        exports.delete = function (url) {
-            return xhr('DELETE', url);
+        exports.delete = function (options) {
+            return xhr('DELETE', options);
         };
 
         return exports;
 
     })();
+
+    // Export module to root under(long)line object
+
+    root.__ = root._.extend((root.__ || _), module);
 
 }).call(this);

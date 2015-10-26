@@ -9,7 +9,7 @@
     // Declare root variable - window in the browser, global on the server
     // Get already define BAT object (if available) or create a new object
 
-    var root = this,
+    var root = window,
         module = {};
 
     module.ajax = (function ()
@@ -135,6 +135,6 @@
 
     // Export module to root under(long)line object
 
-    root.__ = root._.extend((root.__ || _), module);
+    root.__ = root._.extend((root.__ || root._), module);
 
 }).call(this);

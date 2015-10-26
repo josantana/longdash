@@ -50,7 +50,7 @@ Handles localStorage, with fallback using cookies.
 ### Methods
 
 ```
-__.memory.set('batman', 'hero', 7);
+__.memory.set('batman', 'hero', 7, 'days');
 __.memory.get('batman');    // Returns "hero".
 __.memory.delete('batman'); // Goodbye, Bruce.
 ```

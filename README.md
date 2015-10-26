@@ -1,22 +1,67 @@
-under(long)line.js
+underline.js
 ==================
 
 A stretched Underscore.js.
 
 # Ajax
 
-### get
+### How to use
 
-__.ajax.get('/endpoint').success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
+Without options:
 
-### post
+```
+__.ajax.get('/endpoint')
+```
 
-__.ajax.post({ url: '/endpoint', data: {} }).success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
+With options:
 
-### put
+```
+__.ajax.get({
+    url: '/endpoint',
+    params: {
+        'page': 1
+    },
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    data: {
+        // ...
+    }
+}).success(function (data, xhr) {
+    // ...
+}).error(function (data, xhr) {
+    // ...
+});
+```
 
-__.ajax.put({ url: '/endpoint', data: {} }).success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
+### Methods
 
-### delete
+```
+__.ajax.get().success().error();
+__.ajax.post().success().error();
+__.ajax.put().success().error();
+__.ajax.delete().success().error();
+```
 
-__.ajax.delete('/endpoint').success(function (data, xhr) { ... }).error(function (data, xhr) { ... });
+# Memory
+
+Handles localStorage, with fallback using cookies.
+
+### Methods
+
+```
+__.memory.set('batman', 'hero', 7);
+__.memory.get('batman');    // Returns "hero".
+__.memory.delete('batman'); // Goodbye, Bruce.
+```
+
+# String
+
+Useful string methods.
+
+### Methods
+
+```
+__.string.serialize({ batman: 'hero' }); // 'batman=hero'
+__.string.slugfy('It's over now!');      // 'it-s-over-now'
+```

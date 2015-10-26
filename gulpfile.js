@@ -31,11 +31,11 @@ gulp.task('scripts', function()
     .pipe(changed('dist'))
     .pipe(sourcemaps.init())
     .pipe(header(devInfo, { pkg: pkg }))
-    .pipe(concat('underlongline.js'))
+    .pipe(concat('underline.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
-    .pipe(notify('Underscore.js: Build'));
+    .pipe(notify('Underline.js: Build'));
 });
 
 gulp.task('default', function ()

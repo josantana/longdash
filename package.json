@@ -1,14 +1,14 @@
 {
-  "name": "under(long)line.js",
+  "name": "underline.js",
   "description": "A stretched Underscore.js.",
   "url": "http://josantana.github.io",
   "author": "Jo Santana",
   "copyright": "2015",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "license": "Released under the MIT license",
   "repository": {
     "type": "git",
-    "url": "https://github.com/josantana/underlongline.js"
+    "url": "https://github.com/josantana/underline.js"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -21,6 +21,7 @@
     "gulp-uglify": "^1.4.2"
   },
   "dependencies": {
+    "moment": "^2.10.6",
     "underscore": "^1.8.3"
   }
 }

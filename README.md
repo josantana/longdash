@@ -1,7 +1,12 @@
 underline.js
-==================
+============
 
-A stretched Underscore.js.
+A stretched [Underscore.js](http://underscorejs.org/). Underscore uses a single `_`. We use two.
+
+#### Dependencies
+
+- [Underscore.js](http://underscorejs.org/)
+- [Moment.js](http://momentjs.com/)
 
 # Ajax
 

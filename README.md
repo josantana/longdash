@@ -1,16 +1,30 @@
-underline.js
-============
+Longdash
+========
 
-A stretched [Underscore.js](http://underscorejs.org/). Underscore uses a single `_`. We use two.
+A stretched [Lodash](https://lodash.com/). Lodash uses a single `_`. We use two. :sunglasses:
+
+*Longdash* add several modules to expand Lodash, keeping a single namespace in your project. The purpose here is to keep you [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), avoiding writing repetitive code. 
 
 #### Dependencies
 
-- [Underscore.js](http://underscorejs.org/)
+- [Lodash](https://lodash.com/)
 - [Moment.js](http://momentjs.com/)
 
-# Ajax
+These files are not bundled with *Longdash*.
 
-### How to use
+### Install with Bower
+
+You can install and manage *Longdash* versions using [Bower](http://bower.io).
+
+```
+$ bower install longdash
+```
+
+# Modules
+
+## Ajax
+
+#### How to use
 
 Without options:
 
@@ -39,7 +53,7 @@ __.ajax.get({
 });
 ```
 
-### Methods
+#### Methods
 
 ```
 __.ajax.get().success().error();
@@ -48,11 +62,11 @@ __.ajax.put().success().error();
 __.ajax.delete().success().error();
 ```
 
-# Memory
+## Memory
 
 Handles localStorage, with fallback using cookies.
 
-### Methods
+#### Methods
 
 ```
 __.memory.set('batman', 'hero', 7, 'days');
@@ -60,11 +74,11 @@ __.memory.get('batman');    // Returns "hero".
 __.memory.delete('batman'); // Goodbye, Bruce.
 ```
 
-# String
+## String
 
 Useful string methods.
 
-### Methods
+#### Methods
 
 ```
 __.string.serialize({ batman: 'hero' }); // 'batman=hero'

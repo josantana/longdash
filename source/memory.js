@@ -30,7 +30,7 @@
             if (value) {
                 exports[storageType].set(name, value, time, unit);
             } else {
-                console.log('UNDERLINE: Memory: Can\'t store empty data.');
+                console.log('LONGDASH: Memory: Can\'t store empty data.');
                 return false;
             }
         };
@@ -47,7 +47,7 @@
                 var tmpMomentLocale = moment.locale();
                 moment.locale('en');
 
-                console.log('UNDERLINE: Memory: "' + name + '" will expire ' + moment().add(data.timestamp - moment().unix(), 'seconds').fromNow() + ' from ' + storageType + '.');
+                console.log('LONGDASH: Memory: "' + name + '" will expire ' + moment().add(data.timestamp - moment().unix(), 'seconds').fromNow() + ' from ' + storageType + '.');
 
                 // Return to the default locale settings
                 moment.locale(tmpMomentLocale);
@@ -84,7 +84,7 @@
                 document.cookie = name + '-expires=' + timestamper(time, unit) + '; path=/';
                 document.cookie = name + '=' + value + expires + '; path=/';
 
-                console.log('UNDERLINE: Memory: "' + name + '" [CREATED with cookies]');
+                console.log('LONGDASH: Memory: "' + name + '" [CREATED with cookies]');
             },
 
             // Return the cookie
@@ -131,7 +131,7 @@
                 exports.set(name + '-expires', '', -1);
                 exports.set(name, '', -1);
 
-                console.log('UNDERLINE: Memory: "' + name + '" [DELETED from cookies]');
+                console.log('LONGDASH: Memory: "' + name + '" [DELETED from cookies]');
             }
         };
 
@@ -150,7 +150,7 @@
 
                 } catch (e) {}
 
-                console.log('UNDERLINE: Memory: "' + name + '" [CREATED with localStorage]');
+                console.log('LONGDASH: Memory: "' + name + '" [CREATED with localStorage]');
             },
 
             // Return localStorage data
@@ -169,7 +169,7 @@
                     if (exp > now) {
                         return data;
                     } else {
-                        console.log('UNDERLINE: Memory: "' + name + '" has expired.');
+                        console.log('LONGDASH: Memory: "' + name + '" has expired.');
                         exports.delete(name);
                         return null;
                     }
@@ -184,7 +184,7 @@
             delete: function (name) {
 
                 window.localStorage.removeItem(name);
-                console.log('UNDERLINE: Memory: "' + name + '" [DELETED from localStorage]');
+                console.log('LONGDASH: Memory: "' + name + '" [DELETED from localStorage]');
             }
         };
 

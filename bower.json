@@ -1,0 +1,25 @@
+{
+  "name": "Longdash",
+  "version": "0.3.1",
+  "homepage": "https://github.com/josantana/longdash",
+  "authors": [
+    "Jo Santana <josantana@jogalabs.com>"
+  ],
+  "description": "A stretched Lodash.",
+  "keywords": [
+    "js",
+    "methods",
+    "ajax",
+    "string",
+    "localStorage",
+    "cookies"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

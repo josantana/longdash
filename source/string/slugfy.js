@@ -21,9 +21,9 @@ exports.slugfy = function (string) {
         return index === -1 ? character : toChar[index];
     });
 
-    // Replace everything else with dashes
+    // Replace everything else with dashes and remove duplicated dashes
 
-    slug = slug.replace(/([A-Z])/g, '-$1').replace(/[-_\s]+/g, '-').replace(/[^\w\s-]/g, '-');
+    slug = slug.replace(/[-_\s]+/g, '-').replace(/[^\w\s-]/g, '-').replace(/-+/g,'-');
 
     // Remove trailing dash
 

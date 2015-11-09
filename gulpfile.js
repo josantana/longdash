@@ -3,6 +3,7 @@ var concat      = require('gulp-concat'),
     changed     = require('gulp-changed'),
     gulp        = require('gulp'),
     header      = require('gulp-header'),
+    imports     = require('gulp-imports'),
     notify      = require("gulp-notify"),
     plumber     = require('gulp-plumber'),
     pkg         = require('./package.json'),
@@ -28,6 +29,7 @@ gulp.task('scripts', function()
 {
     return gulp.src(js)
     .pipe(plumber())
+    .pipe(imports())
     .pipe(changed('dist'))
     .pipe(sourcemaps.init())
     .pipe(header(devInfo, { pkg: pkg }))

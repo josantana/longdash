@@ -23,15 +23,15 @@
         // Methods
 
         //import("url/address.js");
-        //NOTREADY import("url/domain.js");
+        //import("url/domain.js");
         //import("url/hash.js");
-        //NOTREADY import("url/isexternal.js");
+        //import("url/isexternal.js");
         //import("url/param.js");
         //import("url/path.js");
         //import("url/protocol.js");
         //import("url/search.js");
-        //NOTREADY import("url/subdomain.js");
-        //NOTREADY import("url/tld.js");
+        //import("url/subdomain.js");
+        //import("url/tld.js");
 
         return exports;
 

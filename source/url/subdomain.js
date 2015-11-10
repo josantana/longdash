@@ -4,13 +4,22 @@
 
 exports.subdomain = function () {
 
-    var response = data.hostname.split('.');
+    var host = data.hostname;
 
-    if (response.length > 2) {
-        response = response[0];
+    if (host.split('.').length < 3) {
+
+        return host.split('.')[0];
+
     } else {
-        response = null;
-    }
 
-    return response;
+        // Remove global and regional TLDs
+
+        host = host.replace(regionalTLDs, '').replace(globalTLDs, '');
+
+        // Remove subdomains (if available)
+
+        host = host.split('.').shift();
+
+        return host;
+    }
 };

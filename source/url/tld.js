@@ -25,16 +25,13 @@ exports.tld = function (exact) {
 
             for (i = 0; i < parts.length; i++) {
 
-                match = '.' + (parts[i].match(regionalTLDs) || parts[i].match(globalTLDs));
+                var part = ('.' + parts[i]);
 
-                console.log(parts[i], parts[i].match(regionalTLDs));
-                console.log(parts[i], parts[i].match(globalTLDs));
+                match = part.match(regionalTLDs) || part.match(globalTLDs);
 
                 if (match) {
-                    tlds.push(match.replace('.', ''));
+                    tlds.push(match[0].replace('.', ''));
                 }
-
-                console.log(tlds);
 
                 if (tlds.length > 1) break;
             }
@@ -43,64 +40,21 @@ exports.tld = function (exact) {
 
             for (i = 0; i < parts.length; i++) {
 
-                match = '.' + parts[i].match(wildcardTLDs);
+                match = ('.' + parts[i]).match(wildcardTLDs);
 
                 if (match) {
-                    tlds.push(match);
+                    tlds.push(match[0].replace('.', ''));
                 }
 
-                if (tlds.length > 1) break;
+                // Break if the elements has more than 4 letters (probably, a domain name)
+
+                if (tlds.length > 1 || parts[i].length > 4) break;
             }
 
         }
 
         return tlds;
     }
-
-
-
-
-    // var exact = exact || true,
-    //     host = data.hostname,
-    //     hostArr = response.split('.');
-    //
-    // if (responseArr.length < 3) {
-    //
-    //     // return responseArr[1];
-    //
-    // } else {
-    //
-    //     // Global and regional TLDs
-    //
-    //     // response.replace(globalTLDs, '').replace(regionalTLDs, '');
-    //     //
-    //     // if (!exact) {
-    //     //     response.replace(new RegExp(/\.[a-z]{2,3}\.[a-z]{2}$/i), '');
-    //     // }
-    //     //
-    //     // return response;
-    //
-    //     // for (var i = (responseArr.length - 1); i >= 0; i--) {
-    //     //     console.log(responseArr[i], responseArr[i].match(regionalTLDs));
-    //     //     if (responseArr[i].match(regionalTLDs)) {
-    //     //         console.log('MATCH');
-    //     //     }
-    //     // }
-    // }
-
-
-
-
-
-
-
-    // if (response.match(new RegExp(/\.[a-z]{2,3}\.[a-z]{2}$/i))) {
-    //     return response.match(new RegExp(/\.[a-z]{2,3}\.[a-z]{2}$/i))[0].replace(new RegExp(/^\./i), '');
-    // } else if (response.match(new RegExp(/\.[a-z]{2,4}$/i))) {
-    //     return response.match(new RegExp(/\.[a-z]{2,4}$/i))[0].replace(new RegExp(/^\./i), '');
-    // }
-    //
-    // return null;
 };
 
 //  domain.com

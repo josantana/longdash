@@ -27,7 +27,7 @@ exports.domain = function (exact) {
         host = host.split('.');
 
         if (host.length > 0) {
-            return host[host.length];
+            return host[host.length - 1];
         }
 
         return host[0];

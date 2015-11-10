@@ -1,7 +1,7 @@
 Longdash
 ========
 
-A stretched [Lodash](https://lodash.com/). Lodash uses a single `_`. We use two.
+A stretched [Lodash](https://lodash.com/). Lodash uses a single `_`. We use two. :sunglasses:
 
 All helpful methods from Lodash are inherited. To access them, just use our stretched dash (`__`). Please, check Lodash's [docs](https://lodash.com/docs) for their methods.
 

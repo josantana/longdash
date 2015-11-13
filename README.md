@@ -9,22 +9,6 @@ All helpful methods from Lodash are inherited. To access them, just use our stre
 
 Smile! We got you covered by this huge collection of code snippets. :grinning:
 
-
-### Install with Bower
-
-You can install and manage *Longdash* versions using [Bower](http://bower.io).
-
-```
-$ bower install longdash
-```
-
-### Dependencies
-
-- [Lodash](https://lodash.com/)
-- [Moment.js](http://momentjs.com/)
-
-These libraries are not bundled with *Longdash*. Include them before calling *Longdash*.
-
 ### Documentation
 
 Please, read our [documentation](https://josantana.gitbooks.io/longdash/content/) for more information about all our modules and how to use them in your projects.

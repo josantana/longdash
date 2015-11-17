@@ -12,3 +12,5 @@ Smile! We got you covered by this huge collection of code snippets. :grinning:
 ### Documentation
 
 Please, read our [documentation](https://josantana.gitbooks.io/longdash/content/) for more information about all our modules and how to use them in your projects.
+
+*Available in English (__EN__) and Portuguese (__PT-BR__).*

@@ -4,7 +4,7 @@
   "url": "http://josantana.github.io",
   "author": "Jo Santana",
   "copyright": "2015",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "license": "Released under the MIT license",
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
   },
   "dependencies": {
     "lodash": "^3.10.1",
-    "underscore": "^1.8.3"
+    "moment": "^2.10.6"
   }
 }

@@ -4,11 +4,13 @@
 
 var start = function (time, unit) {
 
-    var tack = this.tack;
-    this.enabled = true;
+    var instance = this,
+        tack = instance.tack;
 
-    if (this.enabled) {
-        this.id = setInterval(tack, moment.duration(time, unit)._milliseconds);
+    instance.enabled = true;
+
+    if (instance.enabled) {
+        instance.id = setInterval(tack, moment.duration(time, unit)._milliseconds);
     }
 
 };

@@ -2,7 +2,7 @@
 //  Module: timer
 //  Method: start
 
-exports.new = function (instance, callback) {
+exports.set = function (instance, callback) {
 
     // Enables our helper methods on this new instance
 

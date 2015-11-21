@@ -4,7 +4,9 @@
 
 var stop = function () {
 
-    this.enabled = false;
-    clearInterval(this.id);
+    var instance = this;
+    instance.enabled = false;
+
+    clearInterval(instance.id);
 
 };

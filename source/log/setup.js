@@ -24,4 +24,4 @@ while (length--) {
 
 // Check if logging is enabled
 
-var enabled = __.memory.get('LONGDASH: Log') || false;
+var enabled = __.memory.get('DEV_MODE') || false;

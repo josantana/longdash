@@ -3,5 +3,5 @@
 //  Method: enable
 
 exports.enable = function () {
-    __.memory.set('LONGDASH: Log', true, 1, 'day');
+    __.memory.set('DEV_MODE', true, 1, 'day');
 };

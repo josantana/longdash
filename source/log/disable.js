@@ -3,5 +3,5 @@
 //  Method: disable
 
 exports.disable = function () {
-    __.memory.delete('LONGDASH: Log');
+    __.memory.delete('DEV_MODE');
 };

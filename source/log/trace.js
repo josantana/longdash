@@ -2,6 +2,6 @@
 //  Module: log
 //  Method: trace
 
-exports.trace = function (message) {
-    if (enabled && message) { console.trace(message); }
+exports.trace = function (object) {
+    if (enabled && object) { console.trace(object); }
 };

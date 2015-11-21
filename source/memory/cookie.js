@@ -21,7 +21,7 @@ exports.cookie = {
         document.cookie = name + '-expires=' + timestamper(time, unit) + '; path=/';
         document.cookie = name + '=' + value + expires + '; path=/';
 
-        console.log('LONGDASH: Memory: "' + name + '" [CREATED with cookies]');
+        __.log.info('LONGDASH: Memory: "' + name + '" [CREATED with cookies]');
     },
 
     // Return the cookie
@@ -68,6 +68,6 @@ exports.cookie = {
         exports.set(name + '-expires', '', -1);
         exports.set(name, '', -1);
 
-        console.log('LONGDASH: Memory: "' + name + '" [DELETED from cookies]');
+        __.log.warn('LONGDASH: Memory: "' + name + '" [DELETED from cookies]');
     }
 };

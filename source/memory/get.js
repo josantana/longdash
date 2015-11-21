@@ -12,7 +12,7 @@ exports.get = function (name) {
         var tmpMomentLocale = moment.locale();
         moment.locale('en');
 
-        console.log('LONGDASH: Memory: "' + name + '" will expire ' + moment().add(data.timestamp - moment().unix(), 'seconds').fromNow() + ' from ' + storageType + '.');
+        __.log.info('LONGDASH: Memory: "' + name + '" will expire ' + moment().add(data.timestamp - moment().unix(), 'seconds').fromNow() + ' from ' + storageType + '.');
 
         // Return to the default locale settings
         moment.locale(tmpMomentLocale);

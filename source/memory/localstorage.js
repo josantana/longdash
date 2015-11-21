@@ -17,7 +17,7 @@ exports.localStorage = {
 
         } catch (e) {}
 
-        console.log('LONGDASH: Memory: "' + name + '" [CREATED with localStorage]');
+        __.log.info('LONGDASH: Memory: "' + name + '" [CREATED with localStorage]');
     },
 
     // Return localStorage data
@@ -36,7 +36,7 @@ exports.localStorage = {
             if (exp > now) {
                 return data;
             } else {
-                console.log('LONGDASH: Memory: "' + name + '" has expired.');
+                __.log.warn('LONGDASH: Memory: "' + name + '" has expired.');
                 exports.delete(name);
                 return null;
             }
@@ -51,6 +51,6 @@ exports.localStorage = {
     delete: function (name) {
 
         window.localStorage.removeItem(name);
-        console.log('LONGDASH: Memory: "' + name + '" [DELETED from localStorage]');
+        __.log.warn('LONGDASH: Memory: "' + name + '" [DELETED from localStorage]');
     }
 };

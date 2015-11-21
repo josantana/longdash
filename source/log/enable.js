@@ -3,5 +3,6 @@
 //  Method: enable
 
 exports.enable = function () {
-    __.memory.set('DEV_MODE', true, 1, 'day');
+    __.memory.localStorage.set('DEV_MODE', true, 1, 'day');
+    enabled = true;
 };

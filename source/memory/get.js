@@ -2,9 +2,11 @@
 //  Module: memory
 //  Method: get
 
-exports.get = function (name) {
+exports.get = function (name, logging) {
 
     var data = exports[storageType].get(name, true);
+
+    logging = logging || true;
 
     if (data) {
 
@@ -12,7 +14,9 @@ exports.get = function (name) {
         var tmpMomentLocale = moment.locale();
         moment.locale('en');
 
-        __.log.info('LONGDASH: Memory: "' + name + '" will expire ' + moment().add(data.timestamp - moment().unix(), 'seconds').fromNow() + ' from ' + storageType + '.');
+        if (logging) {
+            __.log.info('LONGDASH: Memory: "' + name + '" will expire ' + moment().add(data.timestamp - moment().unix(), 'seconds').fromNow() + ' from ' + storageType + '.');
+        }
 
         // Return to the default locale settings
         moment.locale(tmpMomentLocale);

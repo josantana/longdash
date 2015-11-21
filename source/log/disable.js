@@ -3,5 +3,6 @@
 //  Method: disable
 
 exports.disable = function () {
-    __.memory.delete('DEV_MODE');
+    __.memory.localStorage.delete('DEV_MODE');
+    enabled = false;
 };

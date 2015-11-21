@@ -24,4 +24,5 @@ while (length--) {
 
 // Check if logging is enabled
 
-var enabled = __.memory.get('DEV_MODE') || false;
+var devMode = window.localStorage.getItem('DEV_MODE'),
+    enabled = (devMode && JSON.parse(devMode).value) || false;

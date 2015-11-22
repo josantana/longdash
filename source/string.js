@@ -24,6 +24,7 @@
 
         //import("string/camelcase.js");
         //import("string/count.js");
+        //import("string/md5.js");
         //import("string/quote.js");
         //import("string/reverse.js");
         //import("string/serialize.js");

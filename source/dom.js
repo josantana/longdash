@@ -18,6 +18,8 @@
         // Methods
 
         //import("dom/get.js");
+        //import("dom/classlist/many.js");
+        //import("dom/classlist/arrays.js");
 
         return exports;
 

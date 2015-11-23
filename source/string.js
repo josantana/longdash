@@ -54,4 +54,8 @@
 
     root.__ = root._.extend(root.__, module);
 
+    // Shortcut
+
+    root.__.str = root.__.string;
+
 }).call(this);

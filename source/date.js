@@ -1,6 +1,6 @@
 
 //  Namespace: __
-//  Module: dom
+//  Module: date
 
 (function()
 {
@@ -11,15 +11,16 @@
     var root = window,
         module = {};
 
-    module.dom = (function ()
+    module.date = (function ()
     {
-        var exports = {};
+        var exports = {},
+            methods = [ 'now' ];
 
-        // Methods
+        // Inherit Lodash Methods
 
-        //import("dom/get.js");
-        //import("dom/classlist/many.js");
-        //import("dom/classlist/arrays.js");
+        for (var i = 0; i < methods.length; i++) {
+            exports[methods[i]] = root._[methods[i]];
+        }
 
         return exports;
 

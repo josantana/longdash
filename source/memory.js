@@ -34,6 +34,10 @@
 
     // Export module to root Longdash object
 
-    root.__ = root._.extend((root.__ || root._), module);
+    root.__ = root._.extend(root.__, module);
+
+    // Shortcut
+
+    root.__.mem = root.__.memory;
 
 }).call(this);

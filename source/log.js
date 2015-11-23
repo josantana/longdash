@@ -36,6 +36,6 @@
 
     // Export module to root Longdash object
 
-    root.__ = root._.extend(root.__, module);
+    root.__ = root._.extend((root.__ || {}), module);
 
 }).call(this);

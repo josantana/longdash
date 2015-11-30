@@ -1,0 +1,14 @@
+{
+    "username": "XXX",
+    "key": "XXX",
+    "test_path": "tests/stack.js",
+    "test_framework": "mocha",
+    "browsers": [
+        {
+            "browser": "firefox",
+            "browser_version": "latest",
+            "os": "OS X",
+            "os_version": "Lion"
+        }
+    ]
+}

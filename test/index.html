@@ -4,18 +4,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>QUnit</title>
-    <link href="qunit.css" rel="stylesheet" />
+    <title>Longdash</title>
+    <link href="../node_modules/mocha/mocha.css" rel="stylesheet" />
 </head>
 
 <body>
 
     <!-- Outputs the test results -->
-    <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
+    <div id="mocha"></div>
 
     <!-- Testing Suite -->
-    <script src="qunit.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
 
     <!-- Libraries -->
     <script src="../node_modules/lodash/index.js"></script>
@@ -23,7 +23,16 @@
     <script src="../dist/longdash.js"></script>
 
     <!-- Tests -->
-    <script src="test.js"></script>
+    <script>
+        var should = chai.should();
+        mocha.setup('bdd');
+    </script>
+    <script src="string.js"></script>
+    <script>
+        mocha.checkLeaks();
+        mocha.globals(['_', 'moment', '__']);
+        mocha.run();
+    </script>
 
 </body>
 

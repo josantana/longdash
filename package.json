@@ -15,7 +15,7 @@
     "url": "git+https://github.com/josantana/longdash"
   },
   "scripts": {
-    "test": "mocha-casperjs --chai-path=node_modules/chai tests/index.js"
+    "test": "node_modules/.bin/browserstack-runner"
   },
   "bugs": {
     "url": "https://github.com/josantana/longdash/issues"
@@ -34,7 +34,8 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "mocha": "^2.3.4",
-    "nightwatch": "0.8.7"
+    "nightwatch": "0.8.7",
+    "qunit": "0.7.7"
   },
   "dependencies": {
     "lodash": "^3.10.1",

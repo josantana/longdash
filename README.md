@@ -1,4 +1,4 @@
-Longdash
+![longdash](http://i.imgur.com/oWdyvWk.png "longdash")
 =======
 
 A stretched [Lodash](https://lodash.com/). Lodash uses a single `_`. We use two. :sunglasses:

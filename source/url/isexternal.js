@@ -3,5 +3,5 @@
 //  Method: hash
 
 exports.isExternal = function (string) {
-    return string.match(data.hostname) ? true : false;
+    return string.match(data.hostname) ? false : true;
 };

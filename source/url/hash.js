@@ -3,5 +3,5 @@
 //  Method: hash
 
 exports.hash = function () {
-    return data.hash;
+    return data.hash.slice(1);
 };

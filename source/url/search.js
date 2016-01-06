@@ -3,5 +3,5 @@
 //  Method: search
 
 exports.search = function () {
-    return data.search;
+    return data.search.slice(1);
 };

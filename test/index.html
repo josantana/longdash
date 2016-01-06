@@ -6,16 +6,23 @@
     <meta charset="utf-8">
     <title>Longdash</title>
     <link href="../node_modules/mocha/mocha.css" rel="stylesheet" />
+    <script> if (window.location.href !== 'http://localhost:8000/test/?testing=1#tests') { window.location = 'http://localhost:8000/test/?testing=1#tests'; } </script>
 </head>
 
 <body>
 
     <!-- Element for tests -->
-    <ul id="test" style="display: none;">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <div id="test" style="display: none;">
+
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <a href="https://josantana.gitbooks.io/longdash">Documentation</a>
+
+    </div>
 
     <!-- Outputs the test results -->
     <div id="mocha"></div>
@@ -38,6 +45,7 @@
     <script src="dom.js"></script>
     <script src="string.js"></script>
     <script src="memory.js"></script>
+    <script src="url.js"></script>
     <script>
         mocha.checkLeaks();
         mocha.globals(['_', 'moment', '__']);

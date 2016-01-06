@@ -29,12 +29,12 @@ describe('String', function () {
         __.string.slugfy('It\'s over now, Thor. I have your Mjölnir!').should.be.equal('it-s-over-now-thor-i-have-your-mjolnir');
     });
 
-    it('swapcase', function () {
-        __.string.swapcase('DC Comics').should.be.equal('dc cOMICS');
-    });
-
     it('surround', function () {
         __.string.surround('hello', '--').should.be.equal('--hello--');
+    });
+
+    it('swapcase', function () {
+        __.string.swapcase('DC Comics').should.be.equal('dc cOMICS');
     });
 
     it('unquote', function () {

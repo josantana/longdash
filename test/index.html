@@ -24,10 +24,12 @@
 
     <!-- Tests -->
     <script>
-        var should = chai.should();
+        var should = chai.should(),
+        expect = chai.expect;
         mocha.setup('bdd');
     </script>
     <script src="string.js"></script>
+    <script src="memory.js"></script>
     <script>
         mocha.checkLeaks();
         mocha.globals(['_', 'moment', '__']);

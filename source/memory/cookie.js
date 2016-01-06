@@ -16,8 +16,6 @@ exports.cookie = {
             expires = '';
         }
 
-        console.log('SET', __.log);
-
         // Set value/timestamp cookie
 
         document.cookie = name + '-expires=' + timestamper(time, unit) + '; path=/';

@@ -27,13 +27,11 @@ describe('DOM', function () {
 
     it('[ ].addMany', function () {
         __.dom.get('#test li').classList.addMany('multiple tests');
-        console.log(__.dom.get('#test').classList);
         __.dom.get('.tests').length.should.be.equal(3);
     });
 
     it('[ ].removeMany', function () {
         __.dom.get('#test li').classList.removeMany('multiple tests');
-        console.log(__.dom.get('#test').classList);
         expect(__.dom.get('.tests')).to.be.empty;
     });
 

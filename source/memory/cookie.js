@@ -16,6 +16,8 @@ exports.cookie = {
             expires = '';
         }
 
+        console.log('SET', __.log);
+
         // Set value/timestamp cookie
 
         document.cookie = name + '-expires=' + timestamper(time, unit) + '; path=/';
@@ -65,8 +67,8 @@ exports.cookie = {
 
         // Delete both cookies
 
-        exports.set(name + '-expires', '', -1);
-        exports.set(name, '', -1);
+        exports.cookie.set(name + '-expires', '', -1);
+        exports.cookie.set(name, '', -1);
 
         __.log.warn('LONGDASH: Memory: "' + name + '" [DELETED from cookies]');
     }

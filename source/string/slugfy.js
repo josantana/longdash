@@ -27,7 +27,7 @@ exports.slugfy = function (string) {
 
     // Remove trailing dash
 
-    if (root._.endsWith(string, '-')) {
+    if (root._.endsWith(slug, '-')) {
         slug = slug.slice(0, slug.length - 1);
     }
 

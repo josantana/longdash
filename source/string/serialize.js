@@ -7,7 +7,9 @@ exports.serialize = function (obj) {
     var data = '';
 
     for (var key in obj) {
-        data += key + '=' + encodeURIComponent(obj[key]) + '&';
+        if (key !== 'classList') {
+            data += key + '=' + encodeURIComponent(obj[key]) + '&';
+        }
     }
 
     data = data.slice(0,-1);

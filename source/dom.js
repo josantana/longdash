@@ -18,8 +18,8 @@
         // Methods
 
         //import("dom/get.js");
-        //import("dom/classlist/many.js");
-        //import("dom/classlist/arrays.js");
+        //xmport("dom/classlist/many.js");
+        //xmport("dom/classlist/arrays.js");
 
         return exports;
 

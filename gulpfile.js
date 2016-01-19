@@ -37,7 +37,7 @@ gulp.task('scripts', function()
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
-    .pipe(notify('Longdash: Build'));
+    .pipe(notify({ message: 'Longdash: Build', onLast: true }));
 });
 
 gulp.task('default', function ()

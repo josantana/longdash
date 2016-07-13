@@ -8,20 +8,20 @@ exports.cookie = {
 
     set: function (name, value, time, unit) {
 
-        var expires;
-
-        if (time) {
-            expires = '; expires=' + timestamper(time, unit);
-        } else {
-            expires = '';
-        }
+        var value = '=' + value + ';',
+            expiresValue = timestamper(time, unit),
+            expires = time ? ('expires=' + expiresValue + ';') : '',
+            path = 'path=/;',
+            domain = 'domain=.' + '.' + __.url.domain() + '.' + __.url.tld() + ';';
 
         // Set value/timestamp cookie
 
-        document.cookie = name + '-expires=' + timestamper(time, unit) + '; path=/';
-        document.cookie = name + '=' + value + expires + '; path=/';
+        expiresValue = '=' + expiresValue + ';',
 
-        __.log.info('LONGDASH: Memory: "' + name + '" [CREATED with cookies]');
+        document.cookie = name + value + expires + path + domain;
+        document.cookie = name + '-expires' + expiresValue + expires + path + domain;
+
+        if (time !== -1) { __.log.info('LONGDASH: Memory: "' + name + '" [CREATED with cookies]'); }
     },
 
     // Return the cookie
@@ -65,7 +65,6 @@ exports.cookie = {
 
         // Delete both cookies
 
-        exports.cookie.set(name + '-expires', '', -1);
         exports.cookie.set(name, '', -1);
 
         __.log.warn('LONGDASH: Memory: "' + name + '" [DELETED from cookies]');

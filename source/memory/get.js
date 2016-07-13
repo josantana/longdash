@@ -4,7 +4,7 @@
 
 exports.get = function (name, logging) {
 
-    var data = exports[storageType].get(name, true);
+    var data = exports[storageType].get(name, true) || exports['cookie'].get(name, true);
 
     logging = logging || true;
 

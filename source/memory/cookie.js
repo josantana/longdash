@@ -12,11 +12,11 @@ exports.cookie = {
             expiresValue = timestamper(time, unit),
             expires = time ? ('expires=' + expiresValue + ';') : '',
             path = 'path=/;',
-            domain = 'domain=.' + '.' + __.url.domain() + '.' + __.url.tld() + ';';
+            domain = 'domain=' + (__.url.domain() === 'localhost' ? 'localhost' : ('.' + __.url.domain() + '.' + __.url.tld())) + ';';
 
         // Set value/timestamp cookie
 
-        expiresValue = '=' + expiresValue + ';',
+        expiresValue = '=' + expiresValue + ';';
 
         document.cookie = name + value + expires + path + domain;
         document.cookie = name + '-expires' + expiresValue + expires + path + domain;
